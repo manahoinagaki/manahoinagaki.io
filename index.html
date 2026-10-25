@@ -304,17 +304,11 @@
       <h3>研究テーマ</h3>
       <p>衛星データを利用した農業・製造業分野の生産量推定</p>
 
-      <h4>自身の関与・貢献</h4>
-      <p>本研究の全行程を主体的に行いました。Google Earth Engineを活用し、欧州宇宙機関が運用するSentinel-1とSentinel-2の統合解析基盤を構築しました。光学衛星の課題である「雲による欠損」を、全天候型のSARデータで補完するロジックを実装し、農業分野ではトウモロコシの収穫量推定、製造業分野では工場駐車場の車両密度計測による稼働率推定を行いました。</p>
-      <p>特に、金属体に対する二面角反射を捉えるSARのVV偏波を活用し、駐車場の車両密度を定量化する手法を独自に検討しました。その結果、自動車販売台数との間に相関係数0.72という高い相関を示し、学会で評価されて支部長賞を受賞しました。</p>
-
-      <h4>研究活動における技術的強み</h4>
-      <p>研究活動の核となるのは、Pythonを用いた大規模かつ多角的な衛星データのハンドリング経験です。特に、次の3点に注力しました。</p>
-      <ul>
-        <li>光学衛星のNDVI/NDRE指数と、SAR衛星の後方散乱係数を統合し、時系列で標準化して解析するスクリプトを自作しました。これにより、天候に左右されない継続的なモニタリングを実現しました。</li>
-        <li>Sentinelデータに加え、外部データを取得・統合しました。膨大な生データから、特定の農地や工場敷地のポリゴンデータに基づいて統計量を抽出するパイプラインを構築しました。</li>
-        <li>推定指標と農務省統計や自動車販売台数との相関を分析しました。単なる可視化に留まらず、なぜその相関が得られたのかという物理的・社会経済的な背景を考察し、モデルの有効性を検証しました。</li>
-      </ul>
+      <h4>自身の担当</h4>
+      <p>農業分野を担当しました。Google Earth EngineでSentinel-2（光学）、Sentinel-1（レーダー）、ERA5（気象）のデータを取得し、米国のトウモロコシ畑の時系列データを整えて、植生指数（NDVI）と米国農務省の収穫量統計との相関（0.475）を分析しました。</p>
+      <p>当初は愛知県の水田を対象にしましたが、水田が衛星の解像度に対して小さく、ソーラーパネルや海まで水田と判定してしまいました。そのため、畑が大規模で収穫量の統計も公開されている米国に対象を変えました。</p>
+      <p>発表後は、NDVIだけでは精度に限界があったため、対象を5州25地点に広げ、気象・レーダー・作付状況を月ごとの特徴量にした機械学習（ランダムフォレスト）による収穫量予測に発展させています。</p>
+      <p>製造業分野（工場駐車場の車両密度）は指導教員による解析で、両分野をまとめた研究全体を私が学会で発表しました。</p>
 
       <h3>研究実績</h3>
       <ul>
@@ -326,16 +320,10 @@
     <section id="skills">
       <h2>スキルセット</h2>
       <dl class="skills">
-        <dt>フロントエンド</dt>
-        <dd>React, TypeScript, Next.js, HTML/CSS, JavaScript</dd>
-        <dt>モバイル</dt>
-        <dd>Flutter (Dart)</dd>
-        <dt>バックエンド・データベース</dt>
-        <dd>Firebase（Cloud Firestore, Authentication, Security Rules, Hosting）, FastAPI, Flask, SQLite</dd>
-        <dt>データ分析</dt>
-        <dd>Python（pandas, matplotlib, scikit-learn）, Google Earth Engine</dd>
-        <dt>テスト・開発環境</dt>
-        <dd>Vitest, Playwright, GitHub Actions, Git/GitHub</dd>
+        <dt>よく使っている</dt>
+        <dd>Python（pandas, matplotlib）, Google Earth Engine, React, Firebase（Cloud Firestore）, HTML/CSS, JavaScript, Git/GitHub</dd>
+        <dt>使ったことがある</dt>
+        <dd>TypeScript, Next.js, Flutter (Dart), Firebase（Authentication, Security Rules, Hosting）, FastAPI, Flask, SQLite, scikit-learn, Vitest, Playwright, GitHub Actions</dd>
       </dl>
     </section>
 
