@@ -1,15 +1,15 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>稲垣真穂 - ポートフォリオ</title>
+  <meta name="description" content="愛知工業大学 経営情報システム専攻の稲垣真穂のポートフォリオ。Webアプリ開発と衛星データ分析の制作物・研究を紹介しています。">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- 見出し用：Montserrat、本文用：Open Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- 見出し用：Montserrat、本文用：Open Sans・Noto Sans JP -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     /* リセット */
     * {
@@ -19,10 +19,10 @@
     }
 
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Open Sans', 'Noto Sans JP', sans-serif;
       background: #f4f4f4;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     /* ナビゲーションバー */
@@ -38,12 +38,14 @@
     nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       padding: 10px 0;
+      margin: 0;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 0 12px;
     }
 
     nav ul li a {
@@ -55,6 +57,7 @@
 
     nav ul li a:hover {
       color: #2980b9;
+      text-decoration: none;
     }
 
     /* メインコンテンツ */
@@ -70,7 +73,7 @@
     }
 
     header h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
       font-size: 3em;
       font-weight: 700;
       color: #2c3e50;
@@ -78,16 +81,17 @@
     }
 
     header p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       color: #555;
     }
 
     section {
       margin-bottom: 60px;
+      scroll-margin-top: 70px;
     }
 
     section h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
       font-size: 2em;
       color: #2c3e50;
       border-bottom: 2px solid #2c3e50;
@@ -97,19 +101,29 @@
     }
 
     section h3 {
-      font-size: 1.5em;
-      margin: 20px 0 10px;
+      font-size: 1.4em;
+      margin: 24px 0 10px;
       color: #34495e;
     }
 
-    ol, ul {
+    section h4 {
+      font-size: 1.1em;
+      margin: 18px 0 6px;
+      color: #34495e;
+    }
+
+    section p {
+      margin-bottom: 10px;
+    }
+
+    ul {
       margin-left: 20px;
       margin-bottom: 20px;
       list-style: disc;
     }
 
     li {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     a {
@@ -121,10 +135,60 @@
       text-decoration: underline;
     }
 
-    .no-underline {
-      text-decoration: none !important;
-      color: inherit;
-      font-weight: bold;
+    /* スキル表 */
+    .skills dt {
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    .skills dd {
+      margin-left: 0;
+    }
+
+    /* 制作物カード */
+    .works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .work {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+    }
+
+    .work h3 {
+      font-size: 1.15em;
+      margin: 0 0 8px;
+    }
+
+    .work p {
+      font-size: 0.95em;
+    }
+
+    .work .point {
+      color: #555;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+      list-style: none;
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+
+    .tags li {
+      background: #eaf2f8;
+      color: #2c3e50;
+      font-size: 0.8em;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 0;
     }
 
     footer {
@@ -134,6 +198,21 @@
       border-top: 1px solid #ddd;
       color: #777;
     }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+
+      section h2 {
+        font-size: 1.6em;
+      }
+
+      .container {
+        margin-top: 120px;
+        padding: 0 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -141,76 +220,136 @@
   <nav>
     <ul>
       <li><a href="#about">自己紹介</a></li>
-      <li><a href="#research">研究</a></li>
-      <li><a href="#activities">活動実績</a></li>
-      <li><a href="#skills">スキルセット</a></li>
       <li><a href="#works">制作物</a></li>
+      <li><a href="#research">研究</a></li>
+      <li><a href="#skills">スキルセット</a></li>
+      <li><a href="#activities">活動実績</a></li>
     </ul>
   </nav>
-  
+
   <div class="container">
     <header>
       <h1>稲垣真穂</h1>
-      <p>E-mail：inagaki.aikou@gmail.com</p>
+      <p>E-mail：<a href="mailto:inagaki.aikou@gmail.com">inagaki.aikou@gmail.com</a></p>
+      <p>GitHub：<a href="https://github.com/manahoinagaki">github.com/manahoinagaki</a></p>
     </header>
-    
+
     <section id="about">
-    <h2>自己紹介</h2>
-    <p>愛知工業大学経営学部経営学科経営情報システム専攻（学士3年）で、衛生データ分析を行なっています。課題解決型のエンジニアになりたいと考えています。</p>
+      <h2>自己紹介</h2>
+      <p>愛知工業大学 経営学部 経営学科 経営情報システム専攻の3年生です。研究では衛星データを使った生産量の推定に取り組み、大学発のスタートアップでもPythonによる衛星データ解析のインターンをしています。</p>
+      <p>個人開発では、ReactやFirebase、Flutterを使って、身近な人が実際に使うWebアプリ・スマホアプリを作っています。使う人の困りごとを、自分の手で動く形にして解決できるエンジニアを目指しています。</p>
+    </section>
+
+    <section id="works">
+      <h2>制作物</h2>
+      <div class="works">
+        <article class="work">
+          <h3>大学祭 脱出ゲーム運営アプリ</h3>
+          <p>大学祭の脱出ゲーム企画で、スタッフが複数のスマホから同時に整理券の発行・呼び出し・部屋の割り当てを行い、来場者は自分のスマホで待ち状況を確認できるWebアプリです。</p>
+          <p class="point">スタッフ約11人が同時に利用し、2日間で約190件の整理券を一度も止まらずに運用しました。同時操作による部屋の二重割り当てを、Firestoreのトランザクションによる排他制御で防ぎ、複数ブラウザを同時に動かす負荷テストで検証しています。</p>
+          <ul class="tags">
+            <li>React</li><li>TypeScript</li><li>Vite</li><li>Cloud Firestore</li><li>Firebase Hosting</li><li>GitHub Actions</li><li>Playwright</li>
+          </ul>
+        </article>
+
+        <article class="work">
+          <h3>会議録音・文字起こしアプリ</h3>
+          <p>オンライン会議の音声と自分の声をまとめて録音し、日本語の文字起こしまで行うWebアプリです。</p>
+          <p class="point">文字起こしのAIモデル（Whisper）をブラウザ内で動かすため、会議の音声を外部のサーバーに送りません。プライバシーを守りながら、費用もかからない設計にしました。</p>
+          <ul class="tags">
+            <li>React</li><li>Web Audio API</li><li>Whisper（transformers.js）</li>
+          </ul>
+        </article>
+
+        <article class="work">
+          <h3>家族の車の走行距離記録アプリ</h3>
+          <p>家族で使う車の予約と、走行距離の記録を行うアプリです。メーターを写真に撮ると、数字を自動で読み取ります。</p>
+          <p class="point">OCRの読み取り結果を、前回の記録との差から妥当な値だけに絞り込み、読み間違いを減らしています。利用できるのは登録した家族のアカウントだけで、データベース側のルールで制限しています。</p>
+          <ul class="tags">
+            <li>React</li><li>Firebase Authentication</li><li>Security Rules</li><li>tesseract.js</li><li>PWA</li>
+          </ul>
+        </article>
+
+        <article class="work">
+          <h3>catlendar（予定・家計簿の共有アプリ）</h3>
+          <p>グループで予定と家計簿を共有できるスマホアプリです（開発中）。HTML/CSSでの試作、Next.js＋FastAPIでのWeb版を経て、Flutterで作り直しています。</p>
+          <p class="point">招待コードでグループに参加でき、同じグループのメンバーだけがデータを読めるように、認証とデータベース側のルールで制限しています。</p>
+          <ul class="tags">
+            <li>Flutter</li><li>Dart</li><li>Firebase Authentication</li><li>Cloud Firestore</li>
+          </ul>
+        </article>
+
+        <article class="work">
+          <h3>適性検査トレーニングアプリ</h3>
+          <p>適性検査（GAB・CAB）を、制限時間・前の問題に戻れない・画面内の電卓といった本番に近い形式で練習できる、自分用のWebアプリです。</p>
+          <p class="point">問題データはアプリから書き込めないようにし、登録は管理用スクリプトだけが行う設計にしました。答え合わせや問題生成の処理は単体テストで確認しています。</p>
+          <ul class="tags">
+            <li>React</li><li>TypeScript</li><li>Firebase</li><li>Vitest</li><li>zod</li>
+          </ul>
+        </article>
+
+        <article class="work">
+          <h3>本棚管理アプリ</h3>
+          <p>本のバーコードを読み取って登録できるスマホアプリです。</p>
+          <p class="point">国立国会図書館サーチAPIで書誌情報を、openBDで表紙画像を取得し、2つのAPIを組み合わせて片方にない情報を補っています。</p>
+          <ul class="tags">
+            <li>Flutter</li><li>国立国会図書館サーチAPI</li><li>openBD</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
     <section id="research">
       <h2>研究</h2>
-      <h3>研究内容</h3>
-      <h4>研究テーマ</h4>
+      <h3>研究テーマ</h3>
       <p>衛星データを利用した農業・製造業分野の生産量推定</p>
-      <h4>自身の関与・貢献</h4>
-      <p>本研究の全行程を主体的に行いました。
-        具体的には、Google Earth Engineを活用し、欧州宇宙機関が運用するSentinel-1とSentinel-2の統合解析基盤を構築しました。
-        光学衛星の課題である「雲による欠損」を、全天候型のSARデータで補完するロジックを実装し、農業分野ではトウモロコシの収穫量推定、
-        製造業分野では工場駐車場の車両密度計測による稼働率推定を行いました。
-        特に、金属体に対する二面角反射を捉えるSARのVV偏波を活用し、
-        駐車場の車両密度を定量化する手法を独自に検討しました。
-        その結果、自動車販売台数との間に相関係数0.72という高い相関を示すことに成功し、学会で評価され、支部長賞を受賞しました。</p>
 
-    <h4>研究活動における技術的強み</h4>
-    <p>私の研究活動の核となるのは、Pythonを用いた大規模かつ多角的な衛星データのハンドリング経験です。
-        具体的には、以下の3点に注力して取り組みました。
-        1つ目、光学衛星のNDVI/NDRE指数と、SAR衛星の後方散乱係数を統合し、時系列で標準化して解析するスクリプトを自作しました。
-        これにより、天候に左右されない継続的なモニタリングを実現しました。
-        2つ目、Sentinelデータに加え、外部データを取得・統合しました。膨大な生データから、特定の農地や工場敷地内のポリゴンデータに基づき統計量を抽出するパイプラインを構築しました。
-        3つ目、推定指標と農務省統計や自動車販売台数との相関を分析しました。単なるデータの可視化に留まらず、なぜその相関が得られたのかという物理的・社会経済的な背景を考察し、モデルの有効性を検証しました。</p>
+      <h4>自身の関与・貢献</h4>
+      <p>本研究の全行程を主体的に行いました。Google Earth Engineを活用し、欧州宇宙機関が運用するSentinel-1とSentinel-2の統合解析基盤を構築しました。光学衛星の課題である「雲による欠損」を、全天候型のSARデータで補完するロジックを実装し、農業分野ではトウモロコシの収穫量推定、製造業分野では工場駐車場の車両密度計測による稼働率推定を行いました。</p>
+      <p>特に、金属体に対する二面角反射を捉えるSARのVV偏波を活用し、駐車場の車両密度を定量化する手法を独自に検討しました。その結果、自動車販売台数との間に相関係数0.72という高い相関を示し、学会で評価されて支部長賞を受賞しました。</p>
+
+      <h4>研究活動における技術的強み</h4>
+      <p>研究活動の核となるのは、Pythonを用いた大規模かつ多角的な衛星データのハンドリング経験です。特に、次の3点に注力しました。</p>
+      <ul>
+        <li>光学衛星のNDVI/NDRE指数と、SAR衛星の後方散乱係数を統合し、時系列で標準化して解析するスクリプトを自作しました。これにより、天候に左右されない継続的なモニタリングを実現しました。</li>
+        <li>Sentinelデータに加え、外部データを取得・統合しました。膨大な生データから、特定の農地や工場敷地のポリゴンデータに基づいて統計量を抽出するパイプラインを構築しました。</li>
+        <li>推定指標と農務省統計や自動車販売台数との相関を分析しました。単なる可視化に留まらず、なぜその相関が得られたのかという物理的・社会経済的な背景を考察し、モデルの有効性を検証しました。</li>
+      </ul>
 
       <h3>研究実績</h3>
-      <p>日本設備管理学会 東海支部 令和7年度 学生研究発表会（2026年2月）において「支部長賞」を受賞（査読なし）</p>    </section>
-    
+      <ul>
+        <li>日本設備管理学会 東海支部 令和7年度 学生研究発表会（2026年2月）「支部長賞」受賞（査読なし）</li>
+        <li>かがやけ⭐︎あいちサスティナ研究所（2025年12月）優秀賞受賞</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>スキルセット</h2>
+      <dl class="skills">
+        <dt>フロントエンド</dt>
+        <dd>React, TypeScript, Next.js, HTML/CSS, JavaScript</dd>
+        <dt>モバイル</dt>
+        <dd>Flutter (Dart)</dd>
+        <dt>バックエンド・データベース</dt>
+        <dd>Firebase（Cloud Firestore, Authentication, Security Rules, Hosting）, FastAPI, Flask, SQLite</dd>
+        <dt>データ分析</dt>
+        <dd>Python（pandas, matplotlib, scikit-learn）, Google Earth Engine</dd>
+        <dt>テスト・開発環境</dt>
+        <dd>Vitest, Playwright, GitHub Actions, Git/GitHub</dd>
+      </dl>
+    </section>
+
     <section id="activities">
       <h2>活動実績</h2>
       <ul>
-       <li>自由ヶ丘執行委員会(学生自治団体)  委員長</li>
-       <li>大学祭実行委員会（学生自治団体）  幹部</li>
-       <li>2025/12 かがやけ⭐︎あいちサスティナ研究所 優秀賞受賞</li>
+        <li>自由ヶ丘執行委員会（学生自治団体） 委員長</li>
+        <li>大学祭実行委員会（学生自治団体） 幹部</li>
       </ul>
     </section>
-    
-    <section id="skills">
-      <h2>スキルセット</h2>
-      <p><strong>言語:</strong> Javascript/React/Next.js, HTML/CSS</p>
-      <p><strong>コード管理:</strong> Github</p>
-    </section>
-    
-    <section id="works">
-      <h2>制作物</h2>
-      <ul>
-	<li></li>
-      </ul>
-    </section>
-    
+
     <footer>
       <p>&copy; 2026 Manaho Inagaki. All Rights Reserved.</p>
     </footer>
   </div>
 </body>
 </html>
-=======
-
->>>>>>> 9d36fdd1951c97217a75e386ade1f590378e1df5
